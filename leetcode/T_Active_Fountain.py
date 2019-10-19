@@ -9,7 +9,7 @@ def activateFountains(A):
     n = len(A)
     aux = list(range(n + 1))
     for i, x in enumerate(A, 1):
-        aux[max(i - x, 1)] = min(i + x, n)
+        aux[max(i - x, 1)] = max(aux[max(i - x, 1)],min(i + x, n))
 
     ans, l, r = 0, 1, aux[1]
     while r <= n:

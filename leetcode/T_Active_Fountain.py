@@ -7,9 +7,11 @@ def activateFountains(A):
         return 0
     # For all left end of interval, store the largest right end
     n = len(A)
-    aux = list(range(n + 1))
+    aux = [0 for i in range(n+1)]
+    
     for i, x in enumerate(A, 1):
-        aux[max(i - x, 1)] = max(aux[max(i - x, 1)],min(i + x, n))
+        aux[max(i - x, 1)] = max(min(i + x, n),aux[max(i - x, 1)])
+    #print(aux)
 
     ans, l, r = 0, 1, aux[1]
     while r <= n:
@@ -22,8 +24,9 @@ def activateFountains(A):
         if l > n: break
         # If the fountain ranges don't overlap
         r = max(new_r, aux[l])
-    return ans    
+    return ans  
 
+print(activateFountains([10,0,0,3,0,0,2,0,0]),1)
 print(activateFountains([0,0,0,3,0,0,2,0,0]), 2)
 print(activateFountains([3,0,2,0,1,0]), 2)
 print(activateFountains([3,0,1,0,1,0]), 2)

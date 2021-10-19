@@ -1,6 +1,6 @@
 #https://leetcode.com/problems/minimum-window-substring/
 #Space Complexity: O(n) where n is the length of t; Plus the length of resultSubstring which could max be O(m)
-#Time Complexity: O(m+m(n^2))= O(mnn)
+#Time Complexity: O(m+mn)= O(mn)
 
 class Solution:
     def minWindow(self, s: str, t: str) -> str:

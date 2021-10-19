@@ -1,6 +1,6 @@
 #https://leetcode.com/problems/minimum-window-substring/submissions/
 #Space Complexity: O(n)
-#Time Complexity: O(n + m^2)
+#Time Complexity: O(n + m)
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         m = len(s)

@@ -18,7 +18,6 @@ class Solution:
             if i == self.end:
                 return True
             if not self.visited[i]:
-                self.visited[i] = True
                 res = self.dfs(i)
                 if res:
                     return res

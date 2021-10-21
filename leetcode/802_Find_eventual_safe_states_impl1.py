@@ -1,6 +1,6 @@
 #https://leetcode.com/problems/find-eventual-safe-states/
 #Space Complexity: O(V+E)
-#Time Complexity: O(V+E)
+#Time Complexity: O(V+E+logV)
 
 class Solution:
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:

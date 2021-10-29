@@ -27,11 +27,11 @@ class Solution:
             return
         self.util(node.left)
 
-        if not self.head:
-            self.head = node
         if self.last_node_processed:
             node.left = self.last_node_processed
             self.last_node_processed.right = node
+        else:
+            self.head = node
         self.last_node_processed = node
 
         self.util(node.right)

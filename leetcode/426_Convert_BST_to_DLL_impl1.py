@@ -1,0 +1,37 @@
+#https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/
+#Time Complexity: O(V+E)
+
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+"""
+
+class Solution:
+    def treeToDoublyList(self, root: 'Node') -> 'Node':
+        if not root:
+            return root
+        self.head = None
+        self.last_node_processed = None
+        self.util(root)
+        if self.last_node_processed.right != self.head:
+            self.last_node_processed.right = self.head
+            self.head.left = self.last_node_processed
+        return self.head
+
+    def util(self, node):
+        if not node:
+            return None
+        self.util(node.left)
+
+        if not self.head:
+            self.head = node
+        if self.last_node_processed:
+            node.left = self.last_node_processed
+            self.last_node_processed.right = node
+        self.last_node_processed = node
+
+        self.util(node.right)

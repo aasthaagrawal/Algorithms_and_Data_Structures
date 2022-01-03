@@ -4,9 +4,7 @@
 
 class Solution:
     def minSwapsCouples(self, row: List[int]) -> int:
-        d = {}
-        for i,val in enumerate(row):
-            d[val] = i
+        d = {val: i for i,val in enumerate(row)}
         swaps = 0
         n = len(row)//2
         for i in range(n):

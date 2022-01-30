@@ -1,5 +1,5 @@
 #https://leetcode.com/problems/parallel-courses/
-#Using topological sort
+#Using DFS based Topological sort
 
 class Solution:
     def minimumSemesters(self, n: int, relations: List[List[int]]) -> int:
